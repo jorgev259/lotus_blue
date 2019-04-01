@@ -6,6 +6,7 @@ module.exports = {
   events: {
     async ready (client, db) {
       let guild = client.guilds.first()
+      await guild.channels.fetch()
       guild.setName('Blueside Treachery Lore')
       guild.setIcon(path.join(__dirname, 'resources/pfp.jpg'))
       guild.channels.find(c => c.name === 'general').send(
